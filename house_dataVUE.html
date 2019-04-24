@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!----Responsive metatag:<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+  </head>
+  <body>
+     
+    <div class="mx-5 my-5 px-5" style="font-family:unset">
+      <!-- class="bg-secondary text-white"> -->
+<div class="container-fluid">
+      <header class="row">
+        <div class="col-6">
+          <img class="w-25" src="TGIF 2 gif.jpg" />
+          <h4 class="text text-muted">TRANSPARENT GOVERNMENT IN FACT</h4>
+        </div>
+
+        <!-- <div class="col-sm-6 text-right d-inline-block align-bottom"> -->
+        <div class="col-6 text-right">
+          <i class="far fa-envelope fa-1x"></i>
+          <a
+            href="mailto:nysl@chisoccer.org?subject=Reaching%20Out&body=How%20are%20you"
+            >info@tgif.net</a
+          >
+        </div>
+      </header>
+    </div>  
+<div class="container-fluid, pt-3">
+      <nav class= "border border-dark">
+          <ul class="nav nav-pills">
+              <li class="nav-item">
+                  <a class="nav-link active" href="home_data.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link  dropdown-toggle" data-toggle="dropdown" href="#">Congress 113</a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="house_dataVUE.html">House</a>
+                      <a class="dropdown-item" href="senate-data.html">Senate</a></div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Attendance</a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="house_attendance_statisticspageVUE.html">House</a>
+                      <a class="dropdown-item" href="senate_attendance_statisticspageVUE.html">Senate</a></div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty</a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="house_partyloyalty_statisticspageVUE.html">House</a>
+                      <a class="dropdown-item" href="senate_partyloyalty_statisticspageVUE.html">Senate</a></div>
+              </li>
+            </ul>
+      </nav>
+   </div>
+    
+
+
+
+
+
+        <div class="pt-5">
+  
+    
+
+      
+        <h4>Congressmen</h4>
+  
+      
+        <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+      
+   
+
+
+</div>
+
+
+
+
+
+
+
+   
+
+
+<div class="row">
+
+  <div class="col 2">
+    <input id="mySelect1" type="checkbox"  name="party" value="R" onchange="update.then(parametro => updateResults(parametro))"/>Republican<br>
+    </div>
+    <div class="col 2">
+    <input id="mySelect2" type="checkbox" name="party" value="D" onchange="update.then(parametro => updateResults(parametro))" />Democrat<br>
+    </div>
+    <div class="col 2">
+    <input id="mySelect3" type="checkbox" name="party" value="I" onchange="update.then(parametro => updateResults(parametro))" />Independent<br>
+    </div>
+  
+</div>
+
+
+
+
+
+<div id="app" >
+
+<table  id="showtable" class="table">
+<th>name</th>
+<th>Party</th>
+<th>State
+
+
+    <select id="mySelect4" onchange="update.then(parametro => updateResults(parametro))">
+        <option name="state"
+          option value="All States"
+        />All States<br>
+          <option name="state"
+          option value=TN
+        />TN<br>
+      <option name="state"
+          option value=NH
+        />NH<br>
+      <option name="state"
+          option value=WI
+        />WI<br>
+      <option name="state"
+          option value=WY
+        />WY<br>
+      <option name="state"
+          option value=MT
+        />MT<br>
+      <option name="state"
+          option value=AK
+        />AK<br>
+      <option name="state"
+          option value=CO
+        />CO<br>
+      <option name="state"
+          option value=CT
+        />CT<br>
+      <option name="state"
+          option value=MO
+        />MO<br>
+      <option name="state"
+          option value=NJ
+        />NJ<br>
+      <option name="state"
+          option value=AR
+        />AR<br>
+      <option name="state"
+          option value=CA
+        />CA<br>
+      <option name="state"
+          option value=OH
+        />OH<br>
+      <option name="state"
+          option value=NC
+        />NC<br>
+      <option name="state"
+          option value=WA
+        />WA<br>
+      <option name="state"
+          option value=MD
+        />MD<br>
+      <option name="state"
+          option value=DE
+        />DE<br>
+      <option name="state"
+          option value=PA
+        />PA<br>
+      <option name="state"
+          option value=GA
+        />GA<br>
+      <option name="state"
+          option value=NJ
+        />NJ<br>
+      <option name="state"
+          option value=IN
+        />IN<br>
+      <option name="state"
+          option value=OK
+        />OK<br>
+      <option name="state"
+          option value=MS
+        />MS<br>
+      <option name="state"
+          option value=ME
+        />ME<br>
+      <option name="state"
+          option value=DE
+        />DE<br>
+      <option name="state"
+          option value=TN
+        />TN<br>
+      <option name="state"
+          option value=TX
+        />TX<br>
+      <option name="state"
+          option value=MA
+        />MA<br>
+      <option name="state"
+          option value=ID
+        />ID<br>
+      <option name="state"
+          option value=TX
+        />TX<br>
+      <option name="state"
+          option value=IN
+        />IN<br>
+      <option name="state"
+          option value=IL
+        />IL<br>
+      <option name="state"
+          option value=WY
+        />WY<br>
+      <option name="state"
+          option value=CA
+        />CA<br>
+      <option name="state"
+          option value=NE
+        />NE<br>
+      <option name="state"
+          option value=AZ
+        />AZ<br>
+      <option name="state"
+          option value=MN
+        />MN<br>
+      <option name="state"
+          option value=NY
+        />NY<br>
+      <option name="state"
+          option value=SC
+        />SC<br>
+      <option name="state"
+          option value=IA
+        />IA<br>
+      <option name="state"
+          option value=NC
+        />NC<br>
+      <option name="state"
+          option value=IA
+        />IA<br>
+      <option name="state"
+          option value=UT
+        />UT<br>
+      <option name="state"
+          option value=NM
+        />NM<br>
+      <option name="state"
+          option value=ND
+        />ND<br>
+      <option name="state"
+          option value=NV
+        />NV<br>
+      <option name="state"
+          option value=HI
+        />HI<br>
+      <option name="state"
+          option value=ND
+        />ND<br>
+      <option name="state"
+          option value=OK
+        />OK<br>
+      <option name="state"
+          option value=GA
+        />GA<br>
+      <option name="state"
+          option value=NE
+        />NE<br>
+      <option name="state"
+          option value=SD
+        />SD<br>
+      <option name="state"
+          option value=WI
+        />WI<br>
+      <option name="state"
+          option value=VA
+        />VA<br>
+      <option name="state"
+          option value=MA
+        />MA<br>
+      <option name="state"
+          option value=ME
+        />ME<br>
+      <option name="state"
+          option value=IL
+        />IL<br>
+      <option name="state"
+          option value=MN
+        />MN<br>
+      <option name="state"
+          option value=LA
+        />LA<br>
+      <option name="state"
+          option value=NJ
+        />NJ<br>
+      <option name="state"
+          option value=VT
+        />VT<br>
+      <option name="state"
+          option value=UT
+        />UT<br>
+      <option name="state"
+          option value=MI
+        />MI<br>
+      <option name="state"
+          option value=WV
+        />WV<br>
+      <option name="state"
+          option value=MA
+        />MA<br>
+      <option name="state"
+          option value=AZ
+        />AZ<br>
+      <option name="state"
+          option value=MO
+        />MO<br>
+      <option name="state"
+          option value=KY
+        />KY<br>
+      <option name="state"
+          option value=NJ
+        />NJ<br>
+      <option name="state"
+          option value=OR
+        />OR<br>
+      <option name="state"
+          option value=MD
+        />MD<br>
+      <option name="state"
+          option value=KS
+        />KS<br>
+      <option name="state"
+          option value=AK
+        />AK<br>
+      <option name="state"
+          option value=CT
+        />CT<br>
+      <option name="state"
+          option value=WA
+        />WA<br>
+      <option name="state"
+          option value=FL
+        />FL<br>
+      <option name="state"
+          option value=KY
+        />KY<br>
+      <option name="state"
+          option value=OH
+        />OH<br>
+      <option name="state"
+          option value=AR
+        />AR<br>
+      <option name="state"
+          option value=RI
+        />RI<br>
+      <option name="state"
+          option value=NV
+        />NV<br>
+      <option name="state"
+          option value=ID
+        />ID<br>
+      <option name="state"
+          option value=KS
+        />KS<br>
+      <option name="state"
+          option value=WV
+        />WV<br>
+      <option name="state"
+          option value=FL
+        />FL<br>
+      <option name="state"
+          option value=VT
+        />VT<br>
+      <option name="state"
+          option value=HI
+        />HI<br>
+      <option name="state"
+          option value=NY
+        />NY<br>
+      <option name="state"
+          option value=SC
+        />SC<br>
+      <option name="state"
+          option value=AL
+        />AL<br>
+      <option name="state"
+          option value=NH
+        />NH<br>
+      <option name="state"
+          option value=AL
+        />AL<br>
+      <option name="state"
+          option value=MI
+        />MI<br>
+      <option name="state"
+          option value=MT
+        />MT<br>
+      <option name="state"
+          option value=SD
+        />SD<br>
+      <option name="state"
+          option value=PA
+        />PA<br>
+      <option name="state"
+          option value=NM
+        />NM<br>
+      <option name="state"
+          option value=CO
+        />CO<br>
+      <option name="state"
+          option value=LA
+        />LA<br>
+      <option name="state"
+          option value=MT
+        />MT<br>
+      <option name="state"
+          option value=VA
+        />VA<br>
+      <option name="state"
+          option value=MA
+        />MA<br>
+      <option name="state"
+          option value=RI
+        />RI<br>
+      <option name="state"
+          option value=MS
+        />MS<br>
+      <option name="state"
+          option value=OR
+        />OR<br>
+          </select>
+      
+
+
+
+
+
+
+
+
+</th>
+<th>Years in office</th>
+<th>Percentage of Votes</th>
+<tr  class="table" v-for="(value) in members">
+  <td>{{value.first_name}}</td>
+  <td>{{value.party}}</td>
+  <td>{{value.state}}</td>
+  <td>{{value.seniority}}</td>
+  <td>{{value.votes_with_party_pct}}</td>
+</tr>
+
+</table>
+
+
+
+</div>
+
+<!----<input type="checkbox" name="party" value="Independent"/>Independent<br>-->
+
+<!-- <table id="filteredTable" class="table"></table> -->
+
+
+
+
+
+  <div class="container-fluid">
+  
+      <!-- Footer Links -->
+      <footer class="d-flex justify-content-center align-items-center; container-fluid; border border-dark">
+<p class="pt-3"><i class="far fa-copyright"></i> 2016 TGIF | All Rights Reserved</p>
+      </footer>
+</div>
+        
+
+    <!----<script src="pro-congress-113-senate.js"></script>-->
+    <!----<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+
+    <!-- <script src="javascript_to_senate.js"></script> -->
+    <script src="VUE_house.js"></script>
+    
+    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

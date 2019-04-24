@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="m-5 pb-5" style="font-family:unset">
+      <header class="d-flex">
+        <div class="flex-fill">
+          <img class="w-25" src="LOGOTGIF.jpg" />
+        </div>
+        <div class="pb-3">
+          <i class="far fa-envelope fa-3x"></i>
+          <a
+            href="mailto:nysl@chisoccer.org?subject=Reaching%20Out&body=How%20are%20you"
+            >info@tgif.net</a
+          >
+        </div>
+      </header>
+
+      <ul class="nav nav-tabs; border border-dark">
+        <li class="nav-item">
+          <a
+            class="nav-link; btn btn-light"
+            button
+            type="button border border-0"
+            href="home_data.html"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle; btn btn-light"
+            button
+            type="button border border-0"
+            data-toggle="dropdown"
+            href="#"
+            >Congress 113</a
+          >
+          <div class="dropdown-menu">
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="senate-data.html"
+                >Senate</a
+              >
+            </ol>
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="house_data.html"
+                >House</a
+              >
+            </ol>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle; btn btn-light"
+            button
+            type="button border border-0"
+            data-toggle="dropdown"
+            href="#"
+            >Attendance</a
+          >
+          <div class="dropdown-menu">
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="senate_attendance_statisticspage.html"
+                >Senate</a
+              >
+            </ol>
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="house_attendance_statisticspage.html"
+                >House</a
+              >
+            </ol>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle; btn btn-light"
+            button
+            type="button border border-0"
+            data-toggle="dropdown"
+            href="#"
+            >Party Loyalty</a
+          >
+          <div class="dropdown-menu">
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="senate_partyloyalty_statisticspage.html"
+                >Senate</a
+              >
+            </ol>
+            <ol>
+              <a
+                class="dropdown item btn btn-light"
+                button
+                type="button border border-0"
+                href="house_partyloyalty_statisticspage.html"
+                >House</a
+              >
+            </ol>
+          </div>
+        </li>
+      </ul>
+      <div class="row">
+        <div class="col">
+          <h2>Attendance</h2>
+          <p>
+            The Constitution specifies that a majority of members constitutes a
+            quorum to do business in each house. Representatives and senators
+            rarely force the presence of a quorum by demanding quorum calls;
+            thus, in most cases, debates continue even if a majority is not
+            present.
+          </p>
+
+          <p>
+            The Senate uses roll-call votes; a clerk calls out the names of all
+            the senators, each senator stating "aye" or "no" when his or her
+            name is announced. The House reserves roll-call votes for the most
+            formal matters, as a roll-call of all 435 representatives takes
+            quite some time; normally, members vote by electronic device. In the
+            case of a tie, the motion in question fails. In the Senate, the Vice
+            President may (if present) cast the tiebreaking vote.
+          </p>
+        </div>
+
+        <div id="app">
+          <div class="col">
+            <h2>Senate at a glance</h2>
+
+            <!-- <table
+              id="taulasenate"
+              class="table table-striped"
+              class="col"
+            ></table> -->
+
+            <div id="app">
+              <table
+                class="table table-active table-hover table-borderless table-striped"
+              >
+                <tbody>
+                  <th style="text-align:center" class="table-warning">Party</th>
+                  <th style="text-align:center" class="table-warning">
+                    No.members
+                  </th>
+                  <th style="text-align:center" class="table-warning">
+                    %Party Votes
+                  </th>
+                  <tr v-for="(value) in statics">
+                    <td style="text-align:center">{{ value.nameParty }}</td>
+                    <td style="text-align:center">{{ value.party }}</td>
+                    <td style="text-align:center">{{ value.votesPtc }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="app2"></div>
+
+            <div id="app3"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2>Most Engaged (Top 10% Attendance)</h2>
+            <div id="app2">
+              <table
+                class="table table-active table-hover table-borderless table-striped"
+              >
+                <tbody>
+                  <th style="text-align:center" class="table-info">Name</th>
+                  <th style="text-align:center" class="table-info">
+                    No. Missed Votes
+                  </th>
+                  <th style="text-align:center" class="table-info">% Missed</th>
+                  <tr v-for="(value) in members">
+                    <td style="text-align:center">
+                      <span
+                        class="link-cursor"
+                        v-on:click="linkMember(value.url)"
+                      >
+                        {{ value.first_name }} {{ value.middle_name }}
+                        {{ value.last_name }}</span
+                      >
+                    </td>
+                    <td style="text-align:center">{{ value.missed_votes }}</td>
+                    <td style="text-align:center">
+                      {{ value.missed_votes_pct }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <table
+              id="taulaMostEngaged"
+              class="table table-striped"
+              class="col"
+            ></table> -->
+          </div>
+          <div class="col">
+            <h2>Least Engaged (Bottom 10% Attendance)</h2>
+            <div id="most-members">
+              <table
+                class="table table-active table-hover table-borderless table-striped"
+              >
+                <tbody>
+                  <th style="text-align:center" class="table-info">Name</th>
+                  <th style="text-align:center" class="table-info">
+                    No. Missed Votes
+                  </th>
+                  <th style="text-align:center" class="table-info">% Missed</th>
+                  <tr v-for="(value) in members">
+                    <td style="text-align:center">
+                      <span
+                        class="link-cursor"
+                        v-on:click="linkMember(value.url)"
+                      >
+                        {{ value.first_name }} {{ value.middle_name }}
+                        {{ value.last_name }}</span
+                      >
+                    </td>
+                    <td style="text-align:center">{{ value.missed_votes }}</td>
+                    <td style="text-align:center">
+                      {{ value.missed_votes_pct }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <table
+              id="taulaleastEngaged"
+              class="table table-striped"
+              class="col"
+            ></table> -->
+          </div>
+        </div>
+      </div>
+
+      <footer
+        class="d-flex justify-content-center align-items-center; container-fluid; border border-dark"
+      >
+        <p class="pt-3">
+          <i class="far fa-copyright"></i> 2016 TGIF | All Rights Reserved
+        </p>
+      </footer>
+    </div>
+
+    <!-- <script src="pro-congress-113-senate.js"></script> -->
+    <script src="VUE_JSON_senatestatisticspage.js"></script>
+    <!-- <script src="COPYOFSENATESTATISTICSPAGE.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

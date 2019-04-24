@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!----Responsive metatag:<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+  </head>
+  <!----<body>
+    <header>
+      <a href="#">TGIF</a>
+    </header>-->
+
+    
+
+
+
+
+
+
+
+
+<div class= "m-5 pb-5" style="font-family:unset">
+
+    <!----<div class="pb-2 mt-4 mb-2 border-bottom">-->
+    
+
+    <header class="d-flex">
+      <div class="flex-fill">
+        <img class="w-50"src="LOGOTGIF.jpg" />
+      </div>
+      <div class="pb-3">
+        
+              <i class="far fa-envelope fa-3x"></i>
+              <a
+                    href="mailto:nysl@chisoccer.org?subject=Reaching%20Out&body=How%20are%20you"
+                    >info@tgif.net</a>
+      
+     </div>
+    </header>
+  
+
+
+        <ul class="nav nav-tabs; border border-dark">
+          <li class="nav-item">
+            <a class="nav-link; btn btn-light" button type="button border border-0" href="home_data.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a  class="nav-link dropdown-toggle; btn btn-light" button type="button border border-0" data-toggle="dropdown" href="#">Congress 113</a>
+            <div class ="dropdown-menu">
+                <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="senate-data.html">Senate</a></ol>
+                <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="house_data.html">House</a></ol>
+          </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a  class="nav-link dropdown-toggle; btn btn-light" button type="button border border-0" data-toggle="dropdown" href="#">Attendance</a>
+              <div class ="dropdown-menu">
+                  <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="senate_attendance_statisticspage.html">Senate</a></ol>
+                  <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="house_attendance_statisticspage.html">House</a></ol>
+            </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a  class="nav-link dropdown-toggle; btn btn-light" button type="button border border-0" data-toggle="dropdown" href="#">Party Loyalty</a>
+                <div class ="dropdown-menu">
+                    <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="senate_partyloyalty_statisticspage.html">Senate</a></ol>
+                    <ol><a class="dropdown item btn btn-light" button type="button border border-0" href="house_partyloyalty_statisticspage.html">House</a></ol>
+              </div>
+              </li>
+        
+        
+        
+        </ul>    
+       
+      
+
+
+
+
+
+
+        <div class="pt-5">
+  <div class="row">
+    
+      <div class="col-sm-8">
+      
+        <h2>Senators</h2>
+  
+      <p>
+        First convened in 1789, the composition and powers of the Senate are
+        established in Article One of the U.S. Constitution. Each state is
+        represented by two senators, regardless of population, who serve
+        staggered six-year terms. The Senate has several exclusive powers not
+        granted to the House, including consenting to treaties as a precondition
+        to their ratification and consenting to or confirming appointments of
+        Cabinet secretaries, federal judges, other federal executive officials,
+        military officers, regulatory officials, ambassadors, and other federal
+        uniformed officers, as well as trial of federal officials impeached by
+        the House.
+      </p>
+   
+    </div>
+
+    <div class="col-sm-3"></div>
+
+    </div>
+    </div>
+
+<div class="row">
+  <div class="col">
+<p>Filter by party:
+
+<div class="row">
+<div class="col 2">
+
+
+<div id="app" >
+<table>
+
+<tr v-for="(value) in results">
+  <td>{{value.first_name}}</td>
+  <td>{{value.party}}</td>
+  <td>{{value.seniority}}</td>
+  <td>{{value.votes_with_party_pct}}</td>
+</tr>
+
+</table>
+</div> 
+
+
+
+
+
+
+<input id="mySelect1" type="checkbox"  name="party" value="R" onchange="updateResults()"/>Republican<br>
+</div>
+<div class="col 2">
+<input id="mySelect2" type="checkbox" name="party" value="D" onchange="updateResults()" />Democrat<br>
+</div>
+<div class="col 2">
+<input id="mySelect3" type="checkbox" name="party" value="I" onchange="updateResults()" />Independent<br>
+</div>
+</div>
+</p>
+</div>
+<div class="col">
+<p>Filter by State:</p>
+
+<select id="mySelect4" onchange="updateResults()">
+  <option name="state"
+    option value="All States"
+  />All States<br>
+    <option name="state"
+    option value=TN
+  />TN<br>
+<option name="state"
+    option value=NH
+  />NH<br>
+<option name="state"
+    option value=WI
+  />WI<br>
+<option name="state"
+    option value=WY
+  />WY<br>
+<option name="state"
+    option value=MT
+  />MT<br>
+<option name="state"
+    option value=AK
+  />AK<br>
+<option name="state"
+    option value=CO
+  />CO<br>
+<option name="state"
+    option value=CT
+  />CT<br>
+<option name="state"
+    option value=MO
+  />MO<br>
+<option name="state"
+    option value=NJ
+  />NJ<br>
+<option name="state"
+    option value=AR
+  />AR<br>
+<option name="state"
+    option value=CA
+  />CA<br>
+<option name="state"
+    option value=OH
+  />OH<br>
+<option name="state"
+    option value=NC
+  />NC<br>
+<option name="state"
+    option value=WA
+  />WA<br>
+<option name="state"
+    option value=MD
+  />MD<br>
+<option name="state"
+    option value=DE
+  />DE<br>
+<option name="state"
+    option value=PA
+  />PA<br>
+<option name="state"
+    option value=GA
+  />GA<br>
+<option name="state"
+    option value=NJ
+  />NJ<br>
+<option name="state"
+    option value=IN
+  />IN<br>
+<option name="state"
+    option value=OK
+  />OK<br>
+<option name="state"
+    option value=MS
+  />MS<br>
+<option name="state"
+    option value=ME
+  />ME<br>
+<option name="state"
+    option value=DE
+  />DE<br>
+<option name="state"
+    option value=TN
+  />TN<br>
+<option name="state"
+    option value=TX
+  />TX<br>
+<option name="state"
+    option value=MA
+  />MA<br>
+<option name="state"
+    option value=ID
+  />ID<br>
+<option name="state"
+    option value=TX
+  />TX<br>
+<option name="state"
+    option value=IN
+  />IN<br>
+<option name="state"
+    option value=IL
+  />IL<br>
+<option name="state"
+    option value=WY
+  />WY<br>
+<option name="state"
+    option value=CA
+  />CA<br>
+<option name="state"
+    option value=NE
+  />NE<br>
+<option name="state"
+    option value=AZ
+  />AZ<br>
+<option name="state"
+    option value=MN
+  />MN<br>
+<option name="state"
+    option value=NY
+  />NY<br>
+<option name="state"
+    option value=SC
+  />SC<br>
+<option name="state"
+    option value=IA
+  />IA<br>
+<option name="state"
+    option value=NC
+  />NC<br>
+<option name="state"
+    option value=IA
+  />IA<br>
+<option name="state"
+    option value=UT
+  />UT<br>
+<option name="state"
+    option value=NM
+  />NM<br>
+<option name="state"
+    option value=ND
+  />ND<br>
+<option name="state"
+    option value=NV
+  />NV<br>
+<option name="state"
+    option value=HI
+  />HI<br>
+<option name="state"
+    option value=ND
+  />ND<br>
+<option name="state"
+    option value=OK
+  />OK<br>
+<option name="state"
+    option value=GA
+  />GA<br>
+<option name="state"
+    option value=NE
+  />NE<br>
+<option name="state"
+    option value=SD
+  />SD<br>
+<option name="state"
+    option value=WI
+  />WI<br>
+<option name="state"
+    option value=VA
+  />VA<br>
+<option name="state"
+    option value=MA
+  />MA<br>
+<option name="state"
+    option value=ME
+  />ME<br>
+<option name="state"
+    option value=IL
+  />IL<br>
+<option name="state"
+    option value=MN
+  />MN<br>
+<option name="state"
+    option value=LA
+  />LA<br>
+<option name="state"
+    option value=NJ
+  />NJ<br>
+<option name="state"
+    option value=VT
+  />VT<br>
+<option name="state"
+    option value=UT
+  />UT<br>
+<option name="state"
+    option value=MI
+  />MI<br>
+<option name="state"
+    option value=WV
+  />WV<br>
+<option name="state"
+    option value=MA
+  />MA<br>
+<option name="state"
+    option value=AZ
+  />AZ<br>
+<option name="state"
+    option value=MO
+  />MO<br>
+<option name="state"
+    option value=KY
+  />KY<br>
+<option name="state"
+    option value=NJ
+  />NJ<br>
+<option name="state"
+    option value=OR
+  />OR<br>
+<option name="state"
+    option value=MD
+  />MD<br>
+<option name="state"
+    option value=KS
+  />KS<br>
+<option name="state"
+    option value=AK
+  />AK<br>
+<option name="state"
+    option value=CT
+  />CT<br>
+<option name="state"
+    option value=WA
+  />WA<br>
+<option name="state"
+    option value=FL
+  />FL<br>
+<option name="state"
+    option value=KY
+  />KY<br>
+<option name="state"
+    option value=OH
+  />OH<br>
+<option name="state"
+    option value=AR
+  />AR<br>
+<option name="state"
+    option value=RI
+  />RI<br>
+<option name="state"
+    option value=NV
+  />NV<br>
+<option name="state"
+    option value=ID
+  />ID<br>
+<option name="state"
+    option value=KS
+  />KS<br>
+<option name="state"
+    option value=WV
+  />WV<br>
+<option name="state"
+    option value=FL
+  />FL<br>
+<option name="state"
+    option value=VT
+  />VT<br>
+<option name="state"
+    option value=HI
+  />HI<br>
+<option name="state"
+    option value=NY
+  />NY<br>
+<option name="state"
+    option value=SC
+  />SC<br>
+<option name="state"
+    option value=AL
+  />AL<br>
+<option name="state"
+    option value=NH
+  />NH<br>
+<option name="state"
+    option value=AL
+  />AL<br>
+<option name="state"
+    option value=MI
+  />MI<br>
+<option name="state"
+    option value=MT
+  />MT<br>
+<option name="state"
+    option value=SD
+  />SD<br>
+<option name="state"
+    option value=PA
+  />PA<br>
+<option name="state"
+    option value=NM
+  />NM<br>
+<option name="state"
+    option value=CO
+  />CO<br>
+<option name="state"
+    option value=LA
+  />LA<br>
+<option name="state"
+    option value=MT
+  />MT<br>
+<option name="state"
+    option value=VA
+  />VA<br>
+<option name="state"
+    option value=MA
+  />MA<br>
+<option name="state"
+    option value=RI
+  />RI<br>
+<option name="state"
+    option value=MS
+  />MS<br>
+<option name="state"
+    option value=OR
+  />OR<br>
+    </select>
+
+
+</div>
+</div>
+
+
+<!----<input type="checkbox" name="party" value="Independent"/>Independent<br>-->
+
+<table id="filteredTable" class="table"></table> 
+
+
+
+
+    <!----<table id="header"></table>-->
+    <!----<table id="table" class="table"></table>-->
+
+    <!----<div id="data"></div>-MIGHT BE IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!-> 
+    <!----<table id="senate-data"></table>-->
+
+    <!----<footer class="text-muted">
+      <div class="container" style="min-height: 100px; border: 2px solid grey">
+
+        <p>2016 TGIF All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        Page header
+  </div>-->
+
+  
+  
+      <!-- Footer Links -->
+      <footer class="d-flex justify-content-center align-items-center; container-fluid; border border-dark">
+<p class="pt-3"><i class="far fa-copyright"></i> 2016 TGIF | All Rights Reserved</p>
+      </footer>
+
+        </div>
+
+    <!----<script src="pro-congress-113-senate.js"></script>-->
+    <!----<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+
+    <!-- <script src="javascript_to_senate.js"></script> -->
+    <script src="VUE_senate.js"></script>
+    
+    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

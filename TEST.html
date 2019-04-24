@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <p id="demo" onclick="myFunction()">
+      <input type="checkbox" name="party" value="Republican" class="r" />
+      <input type="checkbox" name="party" value="Democrat" class="r" />
+    </p>
+
+    <p id="checkBox1">tabla 1</p>
+    <p id="checkBox2">tabla 2</p>
+
+    <!----<input type="checkbox" name="party" value="Democrat" class="test" />
+
+    <input type="checkbox" name="party" value="Independent" class="test" />-->
+    <!----<p id="try"></p>
+    <p id="texto">click me to change</p>-->
+    <script src="pro-congress-113-senate.js"></script>
+    <script src="TEST_JS.js"></script>
+  </body>
+</html>
+
+
+
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi
+  <option value="BMW">BMW
+  <option value="Mercedes">Mercedes
+  <option value="Volvo">Volvo
+</select>
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
